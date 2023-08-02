@@ -1,0 +1,15 @@
+.header__signout-button {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  color: #a9a9a9;
+
+
+  transition: opacity 260ms ease;
+}
+
+.header__signout-button:is(:focus, :hover) {
+  opacity: 0.6;
+}

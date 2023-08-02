@@ -1,0 +1,10 @@
+.form__link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+  transition: opacity 260ms ease;
+}
+
+.form__link:is(:hover, :focus) {
+  opacity: 0.6;
+}

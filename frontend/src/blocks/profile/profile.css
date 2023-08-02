@@ -1,0 +1,17 @@
+.profile {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 37px;
+
+    margin-inline: auto;
+    width: min(var(--max-width), 100% - var(--container-padding) * 2);
+}
+
+@media (min-width: 720px) {
+    .profile {
+        flex-direction: row;
+        text-align: left;
+    }
+}

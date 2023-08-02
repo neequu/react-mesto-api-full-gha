@@ -1,0 +1,13 @@
+.footer {
+    margin-top: 48px;
+    margin-bottom: 36px;
+    margin-inline: auto;
+    width: min(var(--max-width), 100% - var(--container-padding) * 2);
+}
+
+@media (min-width: 768px) {
+    .footer {
+        margin-top: 67px;
+        margin-bottom: 60px;
+    }
+}

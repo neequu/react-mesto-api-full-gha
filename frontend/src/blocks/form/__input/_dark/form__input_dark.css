@@ -1,0 +1,13 @@
+.form__input_dark {
+  border-bottom: 2px #ccc solid;
+  color: #fff;
+  /* margin-bottom: 30px; */
+  margin: 0;
+  font-size: 14px;
+  padding-bottom: 12px;
+}
+
+.form__input_dark::placeholder {
+  color: #ccc;
+}
+

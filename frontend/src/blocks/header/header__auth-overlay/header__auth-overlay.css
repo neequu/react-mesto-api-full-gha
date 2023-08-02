@@ -1,0 +1,9 @@
+@media (max-width: 425px) {
+  .header__auth-overlay {
+    height: 0;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    transition: height 500ms cubic-bezier(.5,.32,.63,.83), transform 500ms ease;
+  }
+}

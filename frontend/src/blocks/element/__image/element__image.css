@@ -1,0 +1,13 @@
+.element__image {
+    aspect-ratio: 1;
+    max-width: 282px;
+    width: 100%;
+    display: block;
+
+    cursor: pointer;
+}
+
+.popup_expand-image .element__image {
+    width: 75vw;
+    height: 75vh;
+}

@@ -1,0 +1,11 @@
+.form__title {
+  margin-bottom: 40px;
+  font-weight: 900;
+}
+
+@media (min-width: 425px) {
+  .form__title  {
+    margin-bottom: 50px;
+  }
+
+}
