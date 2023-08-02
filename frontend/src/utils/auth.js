@@ -1,4 +1,4 @@
-const baseUrl = "https://auth.nomoreparties.co";
+const baseUrl = 'https://api.neequu.nomoreparties.co';
 
 const checkResponse = async (res) => {
   try {
@@ -19,9 +19,9 @@ const reqest = async (url, options) => {
 const register = async (data) => {
   const url = `${baseUrl}/signup`;
   const headers = {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(data),
   };
@@ -32,9 +32,9 @@ const register = async (data) => {
 const signin = async (data) => {
   const url = `${baseUrl}/signin`;
   const headers = {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(data),
   };
@@ -45,9 +45,9 @@ const signin = async (data) => {
 const validate = async (token) => {
   const url = `${baseUrl}/users/me`;
   const headers = {
-    method: "GET",
+    method: 'GET',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     },
   };
