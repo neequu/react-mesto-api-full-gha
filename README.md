@@ -6,7 +6,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 84.201.158.62
+IP 84.201.158.62
 
 Frontend http://neequu.nomoreparties.co/
 
