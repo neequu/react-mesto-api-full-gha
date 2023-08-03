@@ -1,0 +1,19 @@
+.header__menu {
+  all: unset;
+  cursor: pointer;
+  transition: opacity 280ms ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+
+.header__menu:is(:focus, :hover) {
+  opacity: 0.6;
+}
+
+@media (min-width: 425px) {
+  .header__menu {
+    display: none;
+  }
+}

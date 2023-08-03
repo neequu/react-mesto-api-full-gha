@@ -1,0 +1,6 @@
+@media (max-width: 424.9px) {
+  .header__auth-container_active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

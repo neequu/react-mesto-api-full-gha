@@ -1,0 +1,13 @@
+.header_logged-in {
+  display: flex;
+  flex-direction: column-reverse;
+  padding-left: 0;
+}
+
+@media (min-width: 425px) {
+  .header_logged-in {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
