@@ -25,6 +25,7 @@ function Card({ card, onCardClick, onCardLike, onCardDeleteReq }) {
         className="element__image"
         src={link}
         alt={name}
+        loading="lazy"
       />
       <div className="element__info">
         <h2 className="element__heading">{name}</h2>

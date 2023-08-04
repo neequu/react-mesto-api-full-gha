@@ -1,3 +1,5 @@
+import { baseUrl } from "./constants";
+
 class Api {
   constructor(options) {
     this._baseUrl = options.baseUrl;
@@ -38,6 +40,7 @@ class Api {
 
   getUserInfo() {
     return this._request(`/users/me`, {
+      credentials: 'include',
       headers: this._headers,
     });
   }
@@ -78,7 +81,7 @@ class Api {
 
 // api
 const api = new Api({
-  baseUrl: "https://mesto.nomoreparties.co/v1/cohort-65",
+  baseUrl: baseUrl,
   headers: {
     authorization: "d9a56d97-fcff-4775-997d-668b8fda98e2",
     "Content-Type": "application/json",

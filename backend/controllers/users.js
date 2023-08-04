@@ -9,6 +9,8 @@ import BadRequestError from '../errors/bad-request.js';
 import NotFoundError from '../errors/not-found.js';
 import ConflictError from '../errors/confilct.js';
 
+const { JWT_SECRET, NODE_ENV } = process.env;
+
 export const getUsers = async (_, res, next) => {
   try {
     const users = await User.find();
@@ -36,7 +38,7 @@ export const login = async (req, res, next) => {
   const { email, password } = req.body;
   try {
     const user = await User.findUserByCredentials(email, password);
-    const token = jwt.sign({ _id: user._id }, secretKey, { expiresIn: '7d' });
+    const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : secretKey, { expiresIn: '7d' });
     return res.status(OK_STATUS).json({ token });
   } catch (err) {
     return next(err);

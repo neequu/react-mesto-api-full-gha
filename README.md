@@ -8,6 +8,6 @@
 
 IP 84.201.158.62
 
-Frontend http://neequu.nomoreparties.co/
+Frontend http://neequu.nomoreparties.co
 
-Backend http://api.neequu.nomoreparties.co/
+Backend http://api.neequu.nomoreparties.co
