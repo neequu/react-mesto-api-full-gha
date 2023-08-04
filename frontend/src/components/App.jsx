@@ -9,6 +9,7 @@ import api from "../utils/api.js";
 import { register, validate, signin } from "../utils/auth.js";
 // context
 import { CurrentUserContext } from "../contexts/CurrentUserContext.js";
+// components
 import Login from "./Login.jsx";
 import Register from "./Register.jsx";
 import InfoTooltip from "./InfoTooltip.jsx";
@@ -175,11 +176,9 @@ function Root() {
   const authorize = async (token) => {
     try {
       const loginInfo = await getData(token);
-      const {
-        data: { _, email },
-      } = loginInfo;
 
-      setEmail(email);
+
+      setEmail(loginInfo.email);
       setLoggedIn(true);
       setSuccess(true);
       navigate("/");

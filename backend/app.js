@@ -1,6 +1,8 @@
+import 'dotenv/config';
 import express from 'express';
 import mongoose from 'mongoose';
 import { errors } from 'celebrate';
+import cors from 'cors';
 import routes from './routes/index.js';
 import { login, createUser } from './controllers/users.js';
 import auth from './middlewares/auth.js';
@@ -10,9 +12,16 @@ import { requestLogger, errorLogger } from './middlewares/logger.js';
 
 const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 
+const corsOption = {
+  credentials: true,
+  origin: ['http://neequu.nomoreparties.co', 'https://neequu.nomoreparties.co', 'http://api.neequu.nomoreparties.co', 'https://api.neequu.nomoreparties.co'],
+  // origin: ['http://localhost:3001', 'https://localhost:3001', 'http://localhost:3000', 'https://localhost:3000'],
+};
+
 const app = express();
 app.use(express.json());
 app.use(requestLogger);
+app.use(cors(corsOption));
 
 app.get('/crash-test', () => {
   setTimeout(() => {
