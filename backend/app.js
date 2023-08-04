@@ -7,14 +7,12 @@ import auth from './middlewares/auth.js';
 import { INTERNAL_SERVER_STATUS } from './utils/constants.js';
 import { validateLogin, validateCreateUser } from './middlewares/validation.js';
 import { requestLogger, errorLogger } from './middlewares/logger.js';
-import cors from './middlewares/cors.js';
 
 const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 
 const app = express();
 
 app.use(express.json());
-app.use(cors);
 app.use(requestLogger);
 
 app.get('/crash-test', () => {
