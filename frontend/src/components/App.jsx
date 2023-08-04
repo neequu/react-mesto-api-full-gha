@@ -1,4 +1,4 @@
-import { lazy, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 // header component
 import Header from "./Header.jsx";
@@ -9,16 +9,15 @@ import api from "../utils/api.js";
 import { register, validate, signin } from "../utils/auth.js";
 // context
 import { CurrentUserContext } from "../contexts/CurrentUserContext.js";
-// lazy load components
-const InfoTooltip = lazy(() => import("./InfoTooltip.jsx"));
-const Register = lazy(() => import("./Register.jsx"));
-const Login = lazy(() => import("./Login.jsx"));
-const ImagePopup = lazy(() => import("./ImagePopup.jsx"));
-const Main = lazy(() => import("./Main.jsx"));
-const ProfilePopup = lazy(() => import("./ProfilePopup.jsx"));
-const AvatarPopup = lazy(() => import("./AvatarPopup.jsx"));
-const PlacePopup = lazy(() => import("./PlacePopup.jsx"));
-const ConfirmPopup = lazy(() => import("./ConfirmPopup.jsx"));
+import Login from "./Login.jsx";
+import Register from "./Register.jsx";
+import InfoTooltip from "./InfoTooltip.jsx";
+import ImagePopup from "./ImagePopup.jsx";
+import Main from "./Main.jsx";
+import ProfilePopup from "./ProfilePopup.jsx";
+import AvatarPopup from "./AvatarPopup.jsx";
+import PlacePopup from "./PlacePopup.jsx";
+import ConfirmPopup from "./ConfirmPopup.jsx";
 
 function Root() {
   // popup state
