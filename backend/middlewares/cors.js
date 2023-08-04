@@ -1,6 +1,8 @@
 const allowedCors = [
   'https://neequu.nomoreparties.co',
   'http://neequu.nomoreparties.co',
+  'https://api.neequu.nomoreparties.co',
+  'http://api.neequu.nomoreparties.co',
   'localhost:3000',
 ];
 
