@@ -23,7 +23,6 @@ const register = async (data) => {
     headers: {
       "Content-Type": "application/json",
     },
-    credentials: 'include',
     body: JSON.stringify(data),
   };
 
@@ -37,7 +36,6 @@ const signin = async (data) => {
     headers: {
       "Content-Type": "application/json",
     },
-    credentials: 'include',
     body: JSON.stringify(data),
   };
 
@@ -52,7 +50,6 @@ const validate = async (token) => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-    credentials: 'include',
   };
   return reqest(url, headers);
 };

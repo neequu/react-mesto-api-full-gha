@@ -40,7 +40,6 @@ class Api {
 
   getUserInfo() {
     return this._request(`/users/me`, {
-      credentials: 'include',
       headers: this._headers,
     });
   }
