@@ -3,6 +3,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import { errors } from 'celebrate';
 import cors from 'cors';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
 import routes from './routes/index.js';
 import { login, createUser } from './controllers/users.js';
 import auth from './middlewares/auth.js';
@@ -16,10 +18,19 @@ const corsOption = {
   origin: ['http://localhost:3001', 'https://neequu.nomoreparties.co'],
 };
 
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 150,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
 const app = express();
 app.use(express.json());
 app.use(requestLogger);
 app.use(cors(corsOption));
+app.use(helmet());
+app.use(limiter);
 
 app.get('/crash-test', () => {
   setTimeout(() => {
