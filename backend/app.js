@@ -14,8 +14,7 @@ const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.en
 
 const corsOption = {
   credentials: true,
-  origin: ['http://neequu.nomoreparties.co', 'https://neequu.nomoreparties.co', 'http://api.neequu.nomoreparties.co', 'https://api.neequu.nomoreparties.co'],
-  // origin: ['http://localhost:3001', 'https://localhost:3001', 'http://localhost:3000', 'https://localhost:3000'],
+  origin: ['http://localhost:3000', 'https://neequu.nomoreparties.co'],
 };
 
 const app = express();
