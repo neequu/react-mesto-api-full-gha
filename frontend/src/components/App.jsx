@@ -49,6 +49,7 @@ function Root() {
           api.getInitialCards(jwt),
           api.getUserInfo(jwt),
         ]);
+        console.log(jwt, userData)
         setCurrentUser(userData);
         setCards(initialCards);
       } catch (e) {
@@ -63,7 +64,7 @@ function Root() {
 
     const authorizeOnLoad = async () => {
       const token = localStorage.getItem("jwt");
-      authorize(token);
+      await authorize(token);
     };
 
     authorizeOnLoad();

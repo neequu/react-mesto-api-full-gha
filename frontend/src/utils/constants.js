@@ -7,3 +7,4 @@ export const settings = {
 }
 
 export const baseUrl = 'https://api.neequu.nomoreparties.co'
+// export const baseUrl = 'https://localhost:3001'
