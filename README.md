@@ -6,7 +6,7 @@
 
 ## Ссылки на проект
 
-IP 84.201.158.62
+IP 158.160.115.253
 
 Frontend http://neequu.nomoreparties.co
 
