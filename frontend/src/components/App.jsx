@@ -42,11 +42,12 @@ function Root() {
   // get cards data on load
   useEffect(() => {
     if (!loggedIn) return;
+    const jwt = localStorage.getItem('jwt');
     const fetchData = async () => {
       try {
         const [initialCards, userData] = await Promise.all([
-          api.getInitialCards(),
-          api.getUserInfo(),
+          api.getInitialCards(jwt),
+          api.getUserInfo(jwt),
         ]);
         setCurrentUser(userData);
         setCards(initialCards);
@@ -86,7 +87,7 @@ function Root() {
   const makeRequest = async (request) => {
     setIsLoading(true);
     try {
-      const r = await request();
+      await request();
       closeAllPopups();
     } catch (e) {
       console.log(e);
@@ -102,9 +103,10 @@ function Root() {
   };
   // liking a card
   const handleCardLike = async (card) => {
+    const jwt = localStorage.getItem('jwt');
     const isLiked = card.likes.some((i) => i._id === currentUser._id);
     try {
-      const res = await api.changeLikeCardStatus(card._id, isLiked);
+      const res = await api.changeLikeCardStatus(card._id, isLiked, jwt);
       setCards((state) => state.map((c) => (c._id === card._id ? res : c)));
     } catch (e) {
       console.log(e);
@@ -112,8 +114,9 @@ function Root() {
   };
   // deleting a card
   const handleCardDelete = () => {
+    const jwt = localStorage.getItem('jwt');
     const cb = async () => {
-      await api.deleteCard(deletingCard._id);
+      await api.deleteCard(deletingCard._id, jwt);
       setCards((state) => state.filter((c) => c._id !== deletingCard._id));
     };
 
@@ -126,17 +129,19 @@ function Root() {
   };
   // update user info
   const handleUpdateUser = (user) => {
+    const jwt = localStorage.getItem('jwt');
     const cb = async () => {
-      const res = await api.editUserInfo(user);
+      const res = await api.editUserInfo(user, jwt);
       setCurrentUser(res);
     };
 
     return makeRequest(cb);
   };
   // update avatar
-  const handleUpdateAvatar = async (a) => {
+  const handleUpdateAvatar = async (avatar) => {
+    const jwt = localStorage.getItem('jwt');
     const cb = async () => {
-      const res = await api.editAvatar(a);
+      const res = await api.editAvatar(avatar, jwt);
       setCurrentUser(res);
     };
 
@@ -144,8 +149,9 @@ function Root() {
   };
   // add new place
   const handleAddPlace = async (place) => {
+    const jwt = localStorage.getItem('jwt');
     const cb = async () => {
-      const res = await api.addCard(place);
+      const res = await api.addCard(place, jwt);
       setCards([res, ...cards]);
     };
 

@@ -17,63 +17,72 @@ class Api {
     return this._checkResponse(res);
   }
 
-  getInitialCards() {
+  getInitialCards(jwt) {
     return this._request("/cards", {
       headers: this._headers,
+      'Authorization': `Bearer ${jwt}`,
     });
   }
 
-  addCard(data) {
+  addCard(data, jwt) {
     return this._request("/cards", {
       method: "POST",
       headers: this._headers,
       body: JSON.stringify(data),
+      'Authorization': `Bearer ${jwt}`,
+
     });
   }
 
-  deleteCard(cardId) {
+  deleteCard(cardId, jwt) {
     return this._request(`/cards/${cardId}`, {
       method: "DELETE",
       headers: this._headers,
+      'Authorization': `Bearer ${jwt}`,
     });
   }
 
-  getUserInfo() {
+  getUserInfo(jwt) {
     return this._request(`/users/me`, {
       headers: this._headers,
+      'Authorization': `Bearer ${jwt}`,
     });
   }
 
-  editUserInfo(data) {
+  editUserInfo(data, jwt) {
     return this._request(`/users/me`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify(data),
+      'Authorization': `Bearer ${jwt}`,
     });
   }
 
-  editAvatar(data) {
+  editAvatar(data, jwt) {
     return this._request(`/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({ avatar: data.link }),
+      'Authorization': `Bearer ${jwt}`,
     });
   }
 
-  changeLikeCardStatus = (id, isLiked) =>
-    isLiked ? this.deleteLike(id) : this.setLike(id);
+  changeLikeCardStatus = (id, isLiked, jwt) =>
+    isLiked ? this.deleteLike(id, jwt) : this.setLike(id, jwt);
 
-  setLike(cardId) {
+  setLike(cardId, jwt) {
     return this._request(`/cards/${cardId}/likes`, {
       method: "PUT",
       headers: this._headers,
+      'Authorization': `Bearer ${jwt}`,
     });
   }
 
-  deleteLike(cardId) {
+  deleteLike(cardId, jwt) {
     return this._request(`/cards/${cardId}/likes`, {
       method: "DELETE",
       headers: this._headers,
+      'Authorization': `Bearer ${jwt}`,
     });
   }
 }
