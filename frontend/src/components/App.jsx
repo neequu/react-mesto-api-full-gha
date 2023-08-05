@@ -38,12 +38,11 @@ function Root() {
   const [loggedIn, setLoggedIn] = useState(false);
   // navigate hook
   const navigate = useNavigate();
-
   // get cards data on load
   useEffect(() => {
     if (!loggedIn) return;
     const jwt = localStorage.getItem('jwt');
-    console.log(jwt)
+
     const fetchData = async () => {
       try {
         const [initialCards, userData] = await Promise.all([
@@ -105,7 +104,7 @@ function Root() {
   // liking a card
   const handleCardLike = async (card) => {
     const jwt = localStorage.getItem('jwt');
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+    const isLiked = card.likes.some((i) => i === currentUser._id);
     try {
       const res = await api.changeLikeCardStatus(card._id, isLiked, jwt);
       setCards((state) => state.map((c) => (c._id === card._id ? res : c)));
