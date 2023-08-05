@@ -43,13 +43,13 @@ function Root() {
   useEffect(() => {
     if (!loggedIn) return;
     const jwt = localStorage.getItem('jwt');
+    console.log(jwt)
     const fetchData = async () => {
       try {
         const [initialCards, userData] = await Promise.all([
           api.getInitialCards(jwt),
           api.getUserInfo(jwt),
         ]);
-        console.log(jwt, userData)
         setCurrentUser(userData);
         setCards(initialCards);
       } catch (e) {
