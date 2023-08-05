@@ -64,7 +64,7 @@ function Root() {
 
     const authorizeOnLoad = async () => {
       const token = localStorage.getItem("jwt");
-      await authorize(token);
+      authorize(token);
     };
 
     authorizeOnLoad();
