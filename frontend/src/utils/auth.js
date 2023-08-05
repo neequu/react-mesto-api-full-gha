@@ -20,7 +20,6 @@ const register = async (data) => {
   const url = `${baseUrl}/signup`;
   const headers = {
     method: "POST",
-    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
     },
@@ -34,7 +33,6 @@ const signin = async (data) => {
   const url = `${baseUrl}/signin`;
   const headers = {
     method: "POST",
-    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
     },
@@ -48,7 +46,6 @@ const validate = async (token) => {
   const url = `${baseUrl}/users/me`;
   const headers = {
     method: "GET",
-    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       'Authorization': `Bearer ${token}`,
