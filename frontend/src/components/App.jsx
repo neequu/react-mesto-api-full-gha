@@ -205,7 +205,7 @@ function Root() {
     try {
       await register(data);
       setSuccess(true);
-      navigate("/sign-in");
+      navigate("/");
     } catch (e) {
       setSuccess(false);
       console.log(e);
