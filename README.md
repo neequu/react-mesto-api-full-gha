@@ -1,4 +1,4 @@
-# Mesto
+# Mesto 🖼
 
 Веб-приложение MERN (MongoDB, Express, React, Node.js), которое позволяет пользователям делится картинками, редактировать свой профиль (аватар, описание, имя), регистрироваться и входить в систему с аутентификацией JWT, ставить лайк и удалять свои карточки.
 
@@ -51,23 +51,28 @@
 ![login](https://github.com/neequu/react-mesto-api-full-gha/assets/69749247/c6ec39ad-8223-4204-9c06-adadc4c96523)
 
 ### Загрузка карточки
+
 ![upload](https://github.com/neequu/react-mesto-api-full-gha/assets/69749247/d691abf3-fccd-4299-9df9-edfd44b963d8)
 
 ### Удаление карточки
+
 ![delete](https://github.com/neequu/react-mesto-api-full-gha/assets/69749247/ba7fe6ee-2e34-4558-99bb-351247a04e6e)
 
 ### Лайк
+
 ![like](https://github.com/neequu/react-mesto-api-full-gha/assets/69749247/824d2019-03d1-40b6-ad67-afea40bf015a)
 
 ### Клик по карточке
+
 ![expand](https://github.com/neequu/react-mesto-api-full-gha/assets/69749247/745aec7b-879a-45c1-a97a-3e642369041c)
 
 ### Редактирование информации профиля
+
 ![edit](https://github.com/neequu/react-mesto-api-full-gha/assets/69749247/3aca5282-5540-4a56-abed-4ed7901da1cb)
 
 ### Редактирование аватара
-![pfp](https://github.com/neequu/react-mesto-api-full-gha/assets/69749247/8329626c-ac37-4083-a057-a15e66c5f25e)
 
+![pfp](https://github.com/neequu/react-mesto-api-full-gha/assets/69749247/8329626c-ac37-4083-a057-a15e66c5f25e)
 
 </div>
 
